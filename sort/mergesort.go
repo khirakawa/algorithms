@@ -1,4 +1,4 @@
-package main
+package sort
 
 func merge(left, right []int) []int {
     result := make([]int, len(left) + len(right))

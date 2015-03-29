@@ -1,30 +1,10 @@
-package main
+package sort
 
 import (
     "testing"
-    "reflect"
     "math/rand"
     "time"
 )
-
-// http://golang.org/pkg/testing/
-func TestSort(t *testing.T) {
-    var tests = []struct{
-        arr, want []int
-    }{
-        {
-            []int{2, 6, 345, 54, 23, 34, 3, 3, 434, 432, 1},
-            []int{1, 2, 3, 3, 6, 23, 34, 54, 345, 432, 434},
-        },
-    }
-
-    for _, c := range tests {
-        got := Mergesort(c.arr)
-        if !reflect.DeepEqual(got, c.want) {
-            t.Errorf("Mergesort(%v) == %v, wanted %v", c.arr, got, c.want)
-        }
-    }
-}
 
 func randomArray(size int) []int {
     arr := make([]int, size)
@@ -38,6 +18,7 @@ func randomArray(size int) []int {
     return arr
 }
 
+// http://golang.org/pkg/testing/
 // http://dave.cheney.net/2013/06/30/how-to-write-benchmarks-in-go
 func benchmarkSort(sort func([]int) []int, arrSize int, b *testing.B) {
     arr := randomArray(arrSize)
