@@ -1,7 +1,11 @@
 package main
 
-import "github.com/khirakawa/algorithms/sort"
+import (
+    "fmt"
+    "github.com/khirakawa/algorithms/algorithms"
+)
 
 func main() {
-    sort.Mergesort([]int{2, 6, 345, 54, 23, 34, 3, 3, 434, 432, 1})
+    sum := algorithms.MaxSubarraySum([]int{3, -2, 5, -1})
+    fmt.Printf("max sum is %d\n", sum)
 }
